@@ -1,12 +1,17 @@
 package com.lzj.server;
 
 import java.awt.Font;
+import java.util.ArrayList;
 
+import javax.swing.JMenuItem;
+
+import com.lzj.bean.NMenu;
 import com.lzj.bean.NTextArea;
 import com.lzj.inter.ConfigInter;
 import com.lzj.inter.ResourceMgmt;
 import com.lzj.util.MQFontChooser;
 import com.lzj.util.TextAreaUtil;
+import com.lzj.view.NMenuBar;
 
 /**
  * 设置菜单服务
@@ -81,7 +86,19 @@ public class ConfigServer implements ConfigInter {
 	}
 	public void setAutoNewLine(ResourceMgmt resourceMgmt){
 		NTextArea textArea = textAreaServer.getUsingTextArea();
-		textArea.setLineWrap(!(boolean)resourceMgmt.getAResource("isAutoNewLine"));
-		resourceMgmt.setAResource("isAutoNewLine",!(boolean)resourceMgmt.getAResource("isAutoNewLine"));
+		boolean isAutoNewLine = (boolean)resourceMgmt.getAResource("isAutoNewLine");
+		isAutoNewLine = isAutoNewLine?false:true;
+		textArea.setLineWrap(isAutoNewLine);
+		resourceMgmt.getResource().replace("isAutoNewLine", isAutoNewLine);
+		NMenuBar menuBar = (NMenuBar)resourceMgmt.getAResource("menuBar");
+		NMenu configMenu = menuBar.getConfigMenu();
+		ArrayList<JMenuItem> items = configMenu.getMenuJMenuItems();
+		
+		if(isAutoNewLine){
+			configMenu.updateItemsAutoNewLine("自动换行 √");
+		}else{
+			configMenu.updateItemsAutoNewLine("自动换行");
+		}
+		
 	}
 }

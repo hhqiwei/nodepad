@@ -1,5 +1,7 @@
 package com.lzj.inter;
 
+import java.util.HashMap;
+
 /**
  * HashMap(String, Object)类型resource属性的管理接口
  * 		包含方法
@@ -33,4 +35,6 @@ public interface ResourceMgmt {
 	 * @return	返回被替换的值
 	 */
 	public Object replaceAResource(String name, Object value);
+
+	public HashMap<String, Object> getResource();
 }

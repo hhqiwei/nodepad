@@ -116,7 +116,7 @@ public class MainFrame extends NFrame {
 		textArea.setFont(textAreaFont);
 		// ÎªtextAreaÌí¼Ó¼àÌýÂß¼­
 		textArea.addMouseListener(new TextAreaListener(this));
-		textArea.setLineWrap(true);
+		
 		// ¸øÓÒ¼ü²Ëµ¥nPopupMenuÌí¼Ó¼àÌýÂß¼­
 		RightPopupMenuListener rightPopupMenuListener = new RightPopupMenuListener(this);
 		rightPopupMenu.addActionListener(rightPopupMenuListener);
@@ -153,10 +153,11 @@ public class MainFrame extends NFrame {
 		setAResource("editorServer", new EditorServer(this));
 		setAResource("configServer", new ConfigServer(textAreaServer));
 		setAResource("isAutoNewLine", false);
+		
 		scrollwriteArea = new JScrollPane();
 
 		menuBar = new NMenuBar(this);
-
+		setAResource("menuBar", menuBar);
 		rightPopupMenu = new RightPopupMenu(this);
 		setAResource("RightPopupMenu_rightPopupMenu", rightPopupMenu);
 	}

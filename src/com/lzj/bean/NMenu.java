@@ -134,4 +134,8 @@ public class NMenu extends JMenu implements JMenuItemMgmtInter {
 			getMenuJMenuItems().get(i).setEnabled(values[i]);
 		}
 	}
+	
+	public void updateItemsAutoNewLine(String text) {
+		getMenuJMenuItems().get(3).setText(text);
+	}
 }
