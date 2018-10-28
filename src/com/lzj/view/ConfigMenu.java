@@ -21,9 +21,10 @@ public class ConfigMenu extends NMenu {
 	public static final String ActionCommand_toGBK = "useGBK";
 	public static final String ActionCommand_font = "font";
 	public static final String AUTO_NEWLINE = "newLine";
+	public static final String FONT_COLOR = "color";
 	
 	private ResourceMgmt resourceMgmt;
-	private JMenuItem useUTF, useGBK, font, newLine;
+	private JMenuItem useUTF, useGBK, font, newLine,color;
 	
 	public ConfigMenu(Action a, ResourceMgmt resourceMgmt) {
 		super(a, resourceMgmt);
@@ -70,6 +71,8 @@ public class ConfigMenu extends NMenu {
 		font.setActionCommand(ActionCommand_font);
 		newLine = new JMenuItem("自动换行");
 		newLine.setActionCommand(AUTO_NEWLINE);
+		color = new JMenuItem("颜色");
+		color.setActionCommand(FONT_COLOR);
 		//将菜单项目加入菜单中
 		add(useUTF);
 		add(useGBK);
@@ -77,6 +80,8 @@ public class ConfigMenu extends NMenu {
 		add(font);
 		addSeparator();
 		add(newLine);
+		addSeparator();
+		add(color);
 	
 		//设置Item项目字体大小
 		MenuFontUtil.setMenuItemFont(getMenuJMenuItems());

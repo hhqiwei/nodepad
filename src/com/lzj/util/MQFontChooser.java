@@ -28,14 +28,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;  
 import javax.swing.text.Document;  
 import javax.swing.text.PlainDocument;  
-/**  
- * 字体选择器，仿记事本中的字体控件，使用操作方法与文件选择器JFileChooser基本相同。  
- * @author 米强<转载请注明作者与来源>  
- * @blog http://blog.csdn.net/mq612  
- * @blog http://hi.baidu.com/mq612/blog  
- *  
- */  
-@SuppressWarnings("serial")  
+
 public class MQFontChooser extends JDialog {  
     /**  
      * 选择取消按钮的返回值  
@@ -48,11 +41,11 @@ public class MQFontChooser extends JDialog {
     /**  
      * 中文预览的字符串  
      */  
-    private static final String CHINA_STRING = "神马都是浮云！";  
+    private static final String CHINA_STRING = "桂电15级李子健黄启威李飞骈-记事本";  
     /**  
      * 英文预览的字符串  
      */  
-    private static final String ENGLISH_STRING = "Hello Kitty！";  
+    private static final String ENGLISH_STRING = "Hello Guet！";  
     /**  
      * 数字预览的字符串  
      */  

@@ -160,5 +160,6 @@ public class MainFrame extends NFrame {
 		setAResource("menuBar", menuBar);
 		rightPopupMenu = new RightPopupMenu(this);
 		setAResource("RightPopupMenu_rightPopupMenu", rightPopupMenu);
+		setAResource("main", this);
 	}
 }
