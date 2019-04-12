@@ -58,24 +58,7 @@ public class FileIOServer implements FileIOInter {
 		return wirteCharFile(new File(fileName), data, charset);
 	}
 
-	//
-	// public static void main(String[] args) {
-	// FileServer test = new FileServer();
-	//
-	// ArrayList<String> testData = new ArrayList<String>();
-	// testData.add("测试");
-	// testData.add("abc");
-	// test.wirteFile("1.txt", testData, "utf-8");
-	//
-	// // System.out.println(test.readFile("1.txt", "gbk"));
-	// test_outArray(test.readFile("1.txt", "utf-8"));
-	// }
-	//
-	// public static void test_outArray(ArrayList<String> testData) {
-	// for (String tmp : testData) {
-	// System.out.println(tmp);
-	// }
-	// }
+
 
 	/**
 	 * 读取文件方法
@@ -109,7 +92,6 @@ public class FileIOServer implements FileIOInter {
 	 * 返回String集合 每个String表示一行 基于原文删去回车 出现错误时返回空集合
 	 */
 	public ArrayList<String> readCharFile(File file, String charset) {
-		// TODO Auto-generated method stub
 		ArrayList<String> result = new ArrayList<String>();
 
 		if (file == null)
@@ -127,16 +109,6 @@ public class FileIOServer implements FileIOInter {
 
 			String tmp;
 
-			// 使用readLine读取 剔除了原文的回车符
-			// while ((tmp = reader.readLine()) != null) {
-			// if (!tmp.equals("")) {
-			// System.out.println(tmp);
-			// int i = tmp.charAt(tmp.length()-1);
-			// System.out.println(i);
-			// result.add(tmp);
-			// }
-			//
-			// }
 
 			while ((tmp = reader.readLine()) != null) {
 				result.add(tmp);
@@ -186,7 +158,6 @@ public class FileIOServer implements FileIOInter {
 	 * 出现错误返回false 正常返回true
 	 */
 	public boolean wirteCharFile(String fileName, String[] data) {
-		// TODO Auto-generated method stub
 		return wirteCharFile(fileName, data, null);
 	}
 
@@ -219,7 +190,6 @@ public class FileIOServer implements FileIOInter {
 				writer.newLine();
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 
 			return false;
@@ -228,7 +198,6 @@ public class FileIOServer implements FileIOInter {
 				try {
 					writer.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

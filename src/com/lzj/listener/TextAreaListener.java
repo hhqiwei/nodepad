@@ -35,15 +35,15 @@ public class TextAreaListener extends DropTargetAdapter implements MouseListener
 	public void drop(DropTargetDropEvent dtde) {
 		// 文本拖拽打开操作
 		// 判断当前文本域内是否有未保存的内容
-		if (!textArea.isSaved()) {
-			// 存在未保存内容,弹窗警告
-			if (!AlertWindows.showConfirmDialog(textArea.getFrame(), "继续操作可能会导致文档丢失",
-					"警告:当前文档未保存")) {
-				// 取消事件操作
-				dtde.rejectDrop();
-				return;
-			}
-		}
+//		if (!textArea.isSaved()) {
+//			// 存在未保存内容,弹窗警告
+//			if (!AlertWindows.showConfirmDialog(textArea.getFrame(), "继续操作可能会导致文档丢失",
+//					"警告:当前文档未保存")) {
+//				// 取消事件操作
+//				dtde.rejectDrop();
+//				return;
+//			}
+//		}
 
 
 	}
